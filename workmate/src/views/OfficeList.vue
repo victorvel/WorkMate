@@ -21,6 +21,7 @@ export default {
   name: "Home",
 
   data: () => ({
+    form_results : [],
     offices: [
       {
         id: 1,
@@ -61,11 +62,163 @@ export default {
         ],
         img:"https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?cs=srgb&dl=pexels-cadeau-maestro-1170412.jpg&fm=jpg"
       },
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      },
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }, 
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }, 
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }, 
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      },
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }, 
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }, 
+      {
+        id: 1,
+        name: "Flask's Office",
+        rating: 4.5,
+        reviewCount: 12,
+        types: [
+          { id: 1, name: "Cubical" },
+          { id: 2, name: "Conference Room" },
+        ],
+        description: "Cozy little space for people who wants a ecsape from home. Coffee and tea provided on site.",
+        time: [
+          { id: 1, name: "5:30PM" },
+          { id: 2, name: "6:00PM" },
+          { id: 3, name: "6:30PM" },
+          { id: 4, name: "7:30PM" },
+        ],
+        img:"https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?cs=srgb&dl=pexels-pixabay-37347.jpg&fm=jpg"
+      }
     ],
   }),
 
   components: {
     OfficeCard,
   },
+
+  methods: {
+
+  }, 
+  beforeMount() {
+    this.form_results = JSON.parse(this.$route.params.results);
+  }
+
 };
 </script>

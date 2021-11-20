@@ -106,17 +106,26 @@ export default {
     item_select() {
       this.results.type.push(this.item_selected);
     },
-    utility_select() {
-      this.results.utilities.push(this.utility_selected);
-    },
-    delete_utility(a) {
-      this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
-    },
-    delete_items(a) {
-      this.results.type.splice(this.results.type.indexOf(a), 1);
-    },
-  },
-};
+
+    methods: {
+      submit() {
+        this.$router.push({name: 'Offices', params: { results: JSON.stringify(this.results)}});
+      }, 
+      item_select() {
+        this.results.type.push(this.item_selected);
+      },
+      utility_select() {
+        this.results.utilities.push(this.utility_selected);
+      },
+      delete_utility(a) {
+        this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
+      },
+      delete_items(a) {
+        this.results.type.splice(this.results.type.indexOf(a), 1);
+      },
+    }
+  }
+
 </script>
 
 <style scoped>
