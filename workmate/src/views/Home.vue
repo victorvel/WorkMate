@@ -1,105 +1,112 @@
 <template>
-<div>
-  <v-row 
-  no-gutters
-  id="main-row"
-  class="bg-image">
-    <v-col>
-      <v-form
-      ref="form">
-      <v-text-field
-        v-model="results.location"
-        label="Location"
-        :disabled="disabled"
-        required>
-      </v-text-field>
-      <v-checkbox
-        v-model="results.location"
-        value="current location"
-        label="Use current location"
-        @click="disabled = !disabled"
-        required>
-      </v-checkbox>
-      <v-select
-        v-model="item_selected"
-        @change="item_select"
-        :items="items"
-        label="Type of office space">
-      </v-select>
+  <div >
+  <div class="bg-image"></div>
+    <v-row no-gutters class="mt-12 tag">
+      <v-col cols="1"></v-col>
+      <v-col cols="4">
+        <v-form ref="form" class="ml-1 mr-1 mt-12 mb-1">
+          <v-text-field
+            v-model="results.location"
+            label="Location"
+            :disabled="disabled"
+            required
+          >
+          </v-text-field>
+          <v-checkbox
+            v-model="results.location"
+            value="current location"
+            label="Use current location"
+            @click="disabled = !disabled"
+            required
+          >
+          </v-checkbox>
+          <v-select
+            v-model="item_selected"
+            @change="item_select"
+            :items="items"
+            label="Type of office space"
+          >
+          </v-select>
 
-      <!-- selected row -->
-      <v-row>
-      <div class="selected" v-for="type in results.type" :key="type">
-        <v-col><p @click="delete_items(type)">{{ type }}</p></v-col>
-      </div>
-      </v-row>
-      <br>
-      <!-- end of selected row -->
+          <!-- selected row -->
+          <v-row>
+            <div class="selected" v-for="type in results.type" :key="type">
+              <v-col
+                ><p @click="delete_items(type)">{{ type }}</p></v-col
+              >
+            </div>
+          </v-row>
+          <br />
+          <!-- end of selected row -->
 
-      <v-select
-        v-model="utility_selected"
-        @change="utility_select"
-        :items="supplies"
-        label="Office utilities"
-        required>
-      </v-select>
+          <v-select
+            v-model="utility_selected"
+            @change="utility_select"
+            :items="supplies"
+            label="Office utilities"
+            required
+          >
+          </v-select>
 
-      <!-- selected row -->
-      <v-row>
-      <div class="selected" v-for="utility in results.utilities" :key="utility">
-        <v-col><p @click="delete_utility(utility)">{{ utility }}</p></v-col>
-      </div>
-      </v-row>
-      <br>
-      <!-- end of selected row -->
+          <!-- selected row -->
+          <v-row>
+            <div
+              class="selected"
+              v-for="utility in results.utilities"
+              :key="utility"
+            >
+              <v-col
+                ><p @click="delete_utility(utility)">{{ utility }}</p></v-col
+              >
+            </div>
+          </v-row>
+          <br />
+          <!-- end of selected row -->
 
-    <v-btn
-      color="primary"
-      class="mr-4"
-      @click="submit"
-    >
-      Submit
-    </v-btn>
-  </v-form>
-    </v-col>
-  </v-row>
-</div>
+          <v-btn color="red darken-3" class="mx-auto" @click="submit" dark>
+            Submit
+          </v-btn>
+        </v-form>
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
+export default {
+  name: "Home",
 
-  export default {
-    name: 'Home',
+  components: {},
 
-    components: {
+  data() {
+    return {
+      results: {
+        location: "",
+        type: [],
+        utilities: [],
+      },
+      items: ["cubical", "conference room", "covered room", "open space"],
+      supplies: [
+        "noise cancelling",
+        "white board",
+        "projector",
+        "TV monitor",
+        "Extra computer monitor",
+      ],
+      checkbox: false,
+      item_selected: null,
+      utility_selected: null,
+      disabled: false,
+    };
+  },
+  methods: {
+    submit() {
+      alert(JSON.stringify(this.results));
+    },
+    item_select() {
+      this.results.type.push(this.item_selected);
     },
 
-    data() {
-      return {
-        results: {
-          location : '', 
-          type : [], 
-          utilities : []
-        },
-        items: [
-          'cubical', 
-          'conference room', 
-          'covered room',
-          'open space'
-        ],
-        supplies: [
-          'noise cancelling', 
-          'white board', 
-          'projector', 
-          'TV monitor', 
-          'Extra computer monitor'
-        ],
-        checkbox: false,
-        item_selected: null,
-        utility_selected: null, 
-        disabled: false
-      }
-    },
     methods: {
       submit() {
         this.$router.push({name: 'Offices', params: { results: JSON.stringify(this.results)}});
@@ -118,6 +125,7 @@
       },
     }
   }
+
 </script>
 
 <style scoped>
@@ -131,16 +139,24 @@
 }
 .bg-image {
   background-image: url("../assets/pexels-andrew-neel-8960464.jpg");
-  height: 100vh; 
+  height: 60vh;
+  width: 70%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  right: 5%;
 }
 .selected p {
-  background-color: #2076d2;
+  background-color: #c62828;
   border-radius: 20px;
   padding: 5px;
   color: white;
   cursor: pointer;
 }
+
+.tag {
+  position: relative;
+}
+
 </style>
