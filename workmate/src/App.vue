@@ -6,14 +6,16 @@
         <v-col cols="11">
           <v-row>
           <div class="d-flex align-center">
+            <router-link to="/">
             <v-img
               alt="Vuetify Logo"
-              class="shrink mr-2"
+              class="shrink mr-2 mt-7"
               contain
               :src="require('./assets/long_logo.png')"
               transition="scale-transition"
-              width="150"
+              width="250px"
             />
+            </router-link>
           </div>
 
           <v-spacer></v-spacer>
