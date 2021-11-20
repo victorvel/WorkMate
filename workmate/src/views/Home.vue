@@ -99,24 +99,25 @@ export default {
       disabled: false,
     };
   },
-  methods: {
-    submit() {
-      alert(JSON.stringify(this.results));
-    },
-    item_select() {
-      this.results.type.push(this.item_selected);
-    },
-    utility_select() {
-      this.results.utilities.push(this.utility_selected);
-    },
-    delete_utility(a) {
-      this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
-    },
-    delete_items(a) {
-      this.results.type.splice(this.results.type.indexOf(a), 1);
-    },
-  },
-};
+    methods: {
+      submit() {
+        this.$router.push({name: 'Offices', params: { results: JSON.stringify(this.results)}});
+      }, 
+      item_select() {
+        this.results.type.push(this.item_selected);
+      },
+      utility_select() {
+        this.results.utilities.push(this.utility_selected);
+      },
+      delete_utility(a) {
+        this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
+      },
+      delete_items(a) {
+        this.results.type.splice(this.results.type.indexOf(a), 1);
+      },
+    }
+  }
+
 </script>
 
 <style scoped>
@@ -132,12 +133,14 @@ export default {
 .bg-image {
   background-image: url("../assets/pexels-andrew-neel-8960464.jpg");
   height: 60vh;
+
   width: 60%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   right: 10%;
+
 }
 .selected p {
   background-color: #c62828;
