@@ -4,7 +4,7 @@
     <v-row no-gutters class="mt-12 tag">
       <v-col cols="1"></v-col>
       <v-col cols="4">
-        <v-form ref="form" class="ml-1 mr-1 mt-12 mb-1">
+        <v-form ref="form" class="ml-1 mr-1 mb-1">
           <v-text-field
             v-model="results.location"
             label="Location"
@@ -122,22 +122,25 @@ export default {
 
 <style scoped>
 .v-form {
+  margin-top: 8vh;
   padding: 20px;
-  margin: 150px 500px;
+  /* margin: 150px 500px; */
   border: solid #888888 1px;
   border-radius: 10px;
-  box-shadow: 5px 10px #888888;
+  /* box-shadow: 5px 10px #888888; */
   background-color: white;
 }
 .bg-image {
   background-image: url("../assets/pexels-andrew-neel-8960464.jpg");
   height: 60vh;
-  width: 70%;
+
+  width: 60%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  right: 5%;
+  right: 10%;
+
 }
 .selected p {
   background-color: #c62828;
