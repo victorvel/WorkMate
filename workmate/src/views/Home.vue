@@ -99,14 +99,6 @@ export default {
       disabled: false,
     };
   },
-  methods: {
-    submit() {
-      alert(JSON.stringify(this.results));
-    },
-    item_select() {
-      this.results.type.push(this.item_selected);
-    },
-
     methods: {
       submit() {
         this.$router.push({name: 'Offices', params: { results: JSON.stringify(this.results)}});
