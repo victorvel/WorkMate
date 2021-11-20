@@ -1,11 +1,18 @@
 <template>
-  <div >
-  <div class="bg-image"></div>
+  <div>
+    <div class="bg-image"></div>
     <v-row no-gutters class="mt-12 tag">
       <v-col cols="1"></v-col>
       <v-col cols="4">
         <v-form ref="form" class="ml-1 mr-1 mb-1">
+          <div class="text-center my-4">
+            <v-btn rounded color="red darken-3" dark>
+              Find an Office Near Me&nbsp;
+            </v-btn>
+          </div>
+
           <v-text-field
+            color="#c62828"
             v-model="results.location"
             label="Location"
             :disabled="disabled"
@@ -13,6 +20,7 @@
           >
           </v-text-field>
           <v-checkbox
+            color="#c62828"
             v-model="results.location"
             value="current location"
             label="Use current location"
@@ -21,6 +29,7 @@
           >
           </v-checkbox>
           <v-select
+            color="#c62828"
             v-model="item_selected"
             @change="item_select"
             :items="items"
@@ -40,6 +49,7 @@
           <!-- end of selected row -->
 
           <v-select
+            color="#c62828"
             v-model="utility_selected"
             @change="utility_select"
             :items="supplies"
@@ -62,11 +72,39 @@
           </v-row>
           <br />
           <!-- end of selected row -->
-
-          <v-btn color="red darken-3" class="mx-auto" @click="submit" dark>
-            Submit
-          </v-btn>
+          <v-row class="pa-3">
+            <v-btn color="red darken-3" class="mx-auto" @click="submit" dark>
+              Submit
+            </v-btn>
+          </v-row>
         </v-form>
+      </v-col>
+    </v-row>
+    <div style="width:500px;height:13em;"></div>
+<!-- 
+  <v-row no-gutters class="pt-12 pb-12 my-5"
+    color="black"
+    >
+    <v-col
+    cols="=1"></v-col>
+    <v-col
+    cols="10">
+    <h1 class="text-center"> We help people create productivity through shared workspace </h1>
+    </v-col>
+    <v-col cols="1"></v-col>
+  
+  </v-row> -->
+
+    <v-row no-gutters class="pt-12"> 
+      <v-col
+      cols="1"></v-col>
+      <v-col
+        cols="10">
+      <v-img
+          width="100%"
+          height="30em"
+          src= "https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        ></v-img>
       </v-col>
     </v-row>
   </div>
@@ -99,25 +137,27 @@ export default {
       disabled: false,
     };
   },
-    methods: {
-      submit() {
-        this.$router.push({name: 'Offices', params: { results: JSON.stringify(this.results)}});
-      }, 
-      item_select() {
-        this.results.type.push(this.item_selected);
-      },
-      utility_select() {
-        this.results.utilities.push(this.utility_selected);
-      },
-      delete_utility(a) {
-        this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
-      },
-      delete_items(a) {
-        this.results.type.splice(this.results.type.indexOf(a), 1);
-      },
-    }
-  }
-
+  methods: {
+    submit() {
+      this.$router.push({
+        name: "Offices",
+        params: { results: JSON.stringify(this.results) },
+      });
+    },
+    item_select() {
+      this.results.type.push(this.item_selected);
+    },
+    utility_select() {
+      this.results.utilities.push(this.utility_selected);
+    },
+    delete_utility(a) {
+      this.results.utilities.splice(this.results.utilities.indexOf(a), 1);
+    },
+    delete_items(a) {
+      this.results.type.splice(this.results.type.indexOf(a), 1);
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -139,8 +179,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  right: 10%;
-
+  right: 8.5%;
 }
 .selected p {
   background-color: #c62828;
@@ -153,5 +192,4 @@ export default {
 .tag {
   position: relative;
 }
-
 </style>
